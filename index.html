@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarun Kumar | Developer Portfolio</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --bg-dark: #0f172a;
+      --card-bg: #1e293b;
+      --card-hover: #27354f;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --border: #334155;
+      --btn-github: #24292f;
+      --btn-linkedin: #0a66c2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 0 1rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 1rem;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.025em;
+      margin-bottom: 0.5rem;
+    }
+
+    header p.subtitle {
+      font-size: 1.15rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+
+    header p.institution {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Header Action Links */
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.3rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      color: #ffffff !important;
+    }
+
+    .hero-btn.github {
+      background: #24292e;
+      border: 1px solid #444c56;
+    }
+    .hero-btn.github:hover {
+      background: #32383f;
+      transform: translateY(-2px);
+    }
+
+    .hero-btn.linkedin {
+      background: #0a66c2;
+      border: 1px solid #004182;
+    }
+    .hero-btn.linkedin:hover {
+      background: #004182;
+      transform: translateY(-2px);
+    }
+
+    .hero-btn.email {
+      background: #2563eb;
+      border: 1px solid #1d4ed8;
+    }
+    .hero-btn.email:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    /* Sections */
+    section {
+      margin-top: 2.5rem;
+    }
+
+    h2.section-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    h2.section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+      margin-left: 0.75rem;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.6rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+    }
+
+    .about-card p {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .about-card strong {
+      color: var(--text-main);
+    }
+
+    /* Skills Badges */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .badge {
+      background: rgba(37, 99, 235, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(37, 99, 235, 0.35);
+      padding: 0.45rem 0.9rem;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s ease;
+    }
+
+    .badge:hover {
+      background: rgba(37, 99, 235, 0.3);
+      transform: translateY(-2px);
+    }
+
+    /* Project card */
+    .project-card h3 {
+      font-size: 1.3rem;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-size: 0.98rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary);
+      color: #ffffff !important;
+      padding: 0.6rem 1.25rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Profiles grid */
+    .profiles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .profile-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      color: var(--text-main);
+      transition: all 0.2s ease;
+    }
+
+    .profile-box:hover {
+      border-color: var(--accent);
+      background: var(--card-hover);
+      transform: translateY(-2px);
+    }
+
+    .profile-box .info h4 {
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .profile-box .info span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .profile-box .arrow {
+      color: var(--accent);
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    /* Contact Links */
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1rem;
+    }
+
+    .contact-row strong {
+      min-width: 100px;
+      color: var(--text-main);
+    }
+
+    .contact-row a {
+      color: var(--accent);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .contact-row a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem 1.5rem;
+      color: #64748b;
+      font-size: 0.88rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Tarun Kumar</h1>
+      <p class="subtitle">B.Tech Computer Science &amp; Engineering (AI &amp; ML)</p>
+      <p class="institution">K.R. Mangalam University, Gurugram &bull; Batch 2026–2030</p>
+      
+      <!-- Prominent Header Action Links -->
+      <div class="hero-buttons">
+        <a class="hero-btn github" href="https://github.com/tarun4834" target="_blank" rel="noopener noreferrer">
+          <svg height="18" width="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub Profile
+        </a>
+        <a class="hero-btn linkedin" href="https://www.linkedin.com/in/tarun-kumar-40267228b/" target="_blank" rel="noopener noreferrer">
+          <svg height="18" width="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          LinkedIn Profile
+        </a>
+        <a class="hero-btn email" href="mailto:tk1629627@gmail.com">
+          ✉️ Email Me
+        </a>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="card about-card">
+        <p>
+          I am a passionate Computer Science undergraduate specializing in <strong>Data Science &amp; Machine Learning</strong> 
+          at <strong>K.R. Mangalam University</strong>. Driven by a curiosity for systems-level programming, data engineering, 
+          and AI algorithms, I actively build in Linux environments, implement defensive Bash automation, and build RESTful 
+          web technologies. My goal is to build intelligent, reliable, and scalable applications while continuously advancing 
+          my algorithmic problem-solving capabilities.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <span class="badge">🐍 Python</span>
+        <span class="badge">⚡ C++</span>
+        <span class="badge">🐧 Linux (Ubuntu / WSL)</span>
+        <span class="badge">📜 Bash Scripting</span>
+        <span class="badge">🐙 Git &amp; GitHub</span>
+        <span class="badge">🌐 REST APIs &amp; JSON</span>
+        <span class="badge">🎨 HTML5 &amp; CSS3</span>
+        <span class="badge">📊 Data Structures &amp; Algorithms</span>
+        <span class="badge">🚀 GitHub Pages</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Featured Capstone Project</h2>
+      <div class="card project-card">
+        <h3>DeveloperPortfolio (University Capstone Project)</h3>
+        <p>
+          An autonomous developer portfolio repository showcasing hardware diagnostics, automated shell archiving 
+          with logging and rotation, RESTful API data pipeline extraction, and interactive GitHub Pages web deployment.
+        </p>
+        <p style="margin-bottom: 1.2rem;">
+          <strong>Tech Stack:</strong> Linux, Bash, Python, Git/GitHub, REST APIs, JSON, HTML5, CSS3, GitHub Pages
+        </p>
+        <a class="btn" href="https://github.com/tarun4834/DeveloperPortfolio" target="_blank" rel="noopener noreferrer">
+          View Repository on GitHub &rarr;
+        </a>
+      </div>
+    </section>
+
+    <section id="profiles">
+      <h2 class="section-title">Profiles &amp; Coding Platforms</h2>
+      <div class="profiles-grid">
+        <a class="profile-box" href="https://github.com/tarun4834" target="_blank" rel="noopener noreferrer">
+          <div class="info">
+            <h4>GitHub</h4>
+            <span>@tarun4834 &bull; Repositories &amp; Code</span>
+          </div>
+          <span class="arrow">&rarr;</span>
+        </a>
+        <a class="profile-box" href="https://www.linkedin.com/in/tarun-kumar-40267228b/" target="_blank" rel="noopener noreferrer">
+          <div class="info">
+            <h4>LinkedIn</h4>
+            <span>Tarun Kumar &bull; Professional Network</span>
+          </div>
+          <span class="arrow">&rarr;</span>
+        </a>
+        <a class="profile-box" href="https://leetcode.com/u/nhqESKv0ye/" target="_blank" rel="noopener noreferrer">
+          <div class="info">
+            <h4>LeetCode</h4>
+            <span>@Tarun; Problem Solving</span>
+          </div>
+          <span class="arrow">&rarr;</span>
+        </a>
+        <a class="profile-box" href="https://www.hackerrank.com/profile/tk1629627" target="_blank" rel="noopener noreferrer">
+          <div class="info">
+            <h4>HackerRank</h4>
+            <span>Python (Basic) Certified</span>
+          </div>
+          <span class="arrow">&rarr;</span>
+        </a>
+        <a class="profile-box" href="https://www.freecodecamp.org/fcc-0caa4541-b753-4400-8552-21e2c37101da" target="_blank" rel="noopener noreferrer">
+          <div class="info">
+            <h4>freeCodeCamp</h4>
+            <span>Responsive Web Design</span>
+          </div>
+          <span class="arrow">&rarr;</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact Information</h2>
+      <div class="card contact-card">
+        <div class="contact-row">
+          <strong>GitHub:</strong>
+          <a href="https://github.com/tarun4834" target="_blank" rel="noopener noreferrer">https://github.com/tarun4834</a>
+        </div>
+        <div class="contact-row">
+          <strong>LinkedIn:</strong>
+          <a href="https://www.linkedin.com/in/tarun-kumar-40267228b/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/tarun-kumar-40267228b/</a>
+        </div>
+        <div class="contact-row">
+          <strong>Email:</strong>
+          <a href="mailto:tk1629627@gmail.com">aj4560219@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Tarun Kumar. Built with HTML &amp; CSS &bull; Hosted on GitHub Pages.</p>
+    </footer>
+  </div>
+</body>
+</html>

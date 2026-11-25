@@ -1,0 +1,23 @@
+==========================================================
+ SYSTEM HEALTH & HARDWARE REPORT
+ Author      : Tarun Kumar
+ Roll Number : 2601730055
+ Date        : 2026-11-25 19:06:29
+==========================================================
+
+--- 1. CPU Information ---
+Model : AMD Ryzen 9 8940HX with Radeon Graphics
+Cores : 32
+Load  :  0.00, 0.00, 0.00
+
+--- 2. Memory Usage ---
+Total: 7.4Gi | Used: 752Mi | Free: 6.2Gi | Available: 6.6Gi
+
+--- 3. Top 3 Processes by CPU Usage ---
+USER       PID      %CPU   %MEM   COMMAND
+root       1        9.3    0.2    /sbin/init
+root       140      7.6    0.0    (udev-worker)
+root       172      7.4    0.1    (udev-worker)
+
+==========================================================
+Report generated successfully.

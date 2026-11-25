@@ -1,0 +1,73 @@
+=== 1. Directory Listing (ls -la ~) ===
+total 116
+drwxr-x--- 12 tarun_kumar tarun_kumar 4096 Nov 23 14:37 .
+drwxr-xr-x  8 root     root     4096 Nov 14 08:32 ..
+-rw-------  1 tarun_kumar tarun_kumar 6259 Nov 14 12:04 .bash_history
+-rw-r--r--  1 tarun_kumar tarun_kumar  220 Oct 19 09:47 .bash_logout
+-rw-r--r--  1 tarun_kumar tarun_kumar 3771 Oct 19 09:47 .bashrc
+drwxr-x---  4 tarun_kumar tarun_kumar 4096 Oct 19 09:52 .cache
+drwxr-x---  4 tarun_kumar tarun_kumar 4096 Oct 19 14:08 .config
+-rw-r--r--  1 tarun_kumar tarun_kumar  141 Nov 23 14:25 .gitconfig
+drwxr-xr-x  2 tarun_kumar tarun_kumar 4096 Oct 19 09:52 .landscape
+-rw-------  1 tarun_kumar tarun_kumar   43 Nov 14 08:23 .lesshst
+drwx------  3 tarun_kumar tarun_kumar 4096 Oct 24 14:25 .local
+-rw-rw-r--  1 tarun_kumar tarun_kumar    0 Nov 23 14:18 .motd_shown
+-rw-r--r--  1 tarun_kumar tarun_kumar  807 Oct 19 09:47 .profile
+-rw-------  1 tarun_kumar tarun_kumar 3398 Nov 14 11:59 .viminfo
+drwxr-xr-x  8 tarun_kumar tarun_kumar 4096 Nov 23 14:39 DeveloperPortfolio
+-rw-r--r--  1 tarun_kumar tarun_kumar   71 Nov 14 11:58 aman.txt
+-rwxrwxrwx  1 root     tarun_kumar    0 Oct 19 14:43 amanjha.sh
+drwxr-xr-x  2 tarun_kumar tarun_kumar 4096 Nov 14 11:55 asodfjalk
+drwxr-xr-x  4 tarun_kumar tarun_kumar 4096 Oct 19 15:48 cse103-lab
+drwxr-xr-x  2 tarun_kumar tarun_kumar 4096 Oct 24 15:14 cse103_backups
+drwxr-xr-x  3 tarun_kumar tarun_kumar 4096 Oct 19 14:32 cse103_lab
+-rwxr-xr-x  1 tarun_kumar tarun_kumar  282 Oct 24 15:38 defensive_script.sh
+-rw-r--r--  1 tarun_kumar tarun_kumar   30 Oct 23 04:48 error.log
+-rw-r--r--  1 tarun_kumar tarun_kumar   36 Oct 23 01:20 file1.txt
+-rwxr-xr-x  1 tarun_kumar tarun_kumar  241 Oct 24 15:32 fixed_script.sh
+-rw-r--r--  1 tarun_kumar tarun_kumar   71 Nov 13 01:03 harry.txt
+-rw-r--r--  1 tarun_kumar tarun_kumar   71 Nov 14 11:54 kumar.txt
+-rw-r--r--  1 tarun_kumar tarun_kumar    0 Oct 23 01:13 my
+-rw-r--r--  1 tarun_kumar tarun_kumar   60 Oct 23 04:46 output.txt
+-rw-r--r--  1 tarun_kumar tarun_kumar   18 Oct 24 15:39 students.txt
+drwxr-xr-x  2 tarun_kumar tarun_kumar 4096 Oct 19 15:31 ~p
+
+=== 2. Top 10 Running Processes (ps aux | head -10) ===
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  4.0  0.3  24276 15416 ?        Ss   14:43   0:01 /sbin/init
+root           2  0.0  0.0   3820  2528 hvc0     Sl+  14:43   0:00 /init
+root           3  0.0  0.0   3680  2216 hvc0     S+   14:43   0:00 init-watcher
+root           8  0.3  0.0   4004  2468 hvc0     Sl+  14:43   0:00 plan9 --control-socket 7 --log-level 4 --server-fd 8 --pipe-fd 10 --log-truncate
+root          56  7.2  0.6  50528 24712 ?        S<s  14:43   0:00 /usr/lib/systemd/systemd-journald
+systemd+      91  2.9  0.3  22448 14500 ?        Ss   14:43   0:00 /usr/lib/systemd/systemd-resolved
+root          99  9.3  0.3  35120 12216 ?        Ss   14:43   0:00 /usr/lib/systemd/systemd-udevd
+root         121  3.7  0.1   9348  7008 ?        Ss   14:43   0:00 /usr/sbin/apache2 -k start -DFOREGROUND
+root         122  1.9  0.0   2888  2012 ?        Ss   14:43   0:00 /bin/sh /usr/lib/systemd/scripts/chronyd-starter.sh -n -F 1
+
+=== 3. Disk Space Usage (df -h) ===
+Filesystem      Size  Used Avail Use% Mounted on
+none            1.9G     0  1.9G   0% /usr/lib/modules/6.18.58.1-microsoft-standard-WSL2
+/dev/sdb         97M   97M     0 100% /usr/src/linux-headers-6.18.58.1-microsoft-standard-WSL2
+none            1.9G  4.0K  1.9G   1% /mnt/wsl
+drivers         256G  110G  146G  43% /usr/lib/wsl/drivers
+/dev/sdd       1007G  1.7G  955G   1% /
+none            1.9G   32K  1.9G   1% /mnt/wslg
+none            1.9G     0  1.9G   0% /usr/lib/wsl/lib
+rootfs          1.9G  3.4M  1.9G   1% /init
+none            1.9G  532K  1.9G   1% /run
+none            1.9G     0  1.9G   0% /run/lock
+none            1.9G     0  1.9G   0% /run/shm
+none            1.9G   80K  1.9G   1% /mnt/wslg/versions.txt
+none            1.9G   80K  1.9G   1% /mnt/wslg/doc
+C:\             256G  110G  146G  43% /mnt/c
+D:\             220G  101M  220G   1% /mnt/d
+tmpfs           1.9G     0  1.9G   0% /tmp
+none            1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+none            1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
+none            1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+tmpfs           378M   12K  378M   1% /run/user/1000
+
+=== 4. Memory Usage (free -h) ===
+               total        used        free      shared  buff/cache   available
+Mem:           3.7Gi       535Mi       2.7Gi       4.4Mi       599Mi       3.2Gi
+Swap:          1.0Gi          0B       1.0Gi
